@@ -23,7 +23,7 @@ from loader import dp, bot
 async def answer_question(call: CallbackQuery, callback_data:dict):
     await call.message.answer("Получение pdf билета")
     for image in PDF_QUESTION_RUS:
-      await call.message.reply_photo(photo=image)
+        await call.message.reply_photo(photo=image)
     await call.message.delete()
 
 @dp.callback_query_handler(pdf_callback.filter(item_name='programm'))
