@@ -3,33 +3,32 @@ from cgitb import text
 from gc import callbacks
 from unicodedata import category
 from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
-from keyboards.inline.callback_data import questions_callback
+from keyboards.inline.callback_data import *
 
 questions_dict = {'Получение pdf билета':'pdf',
         'Возврат билета': 'cancel',
         'Счет фактура билета':'schet',
-        'Поменять билет':'change',
         'Скидки на билеты':'discount',
         'Поменять билет':'change',
-        'Регистрация в платформе':'registration',
+        'Регистрация на платформе':'registration',
         'Другая тема' : 'another'}
 
-questions = InlineKeyboardMarkup(row_width=1)
+russian_questions = InlineKeyboardMarkup(row_width=1)
 for key, value in questions_dict.items():
-    questions.insert(InlineKeyboardButton(text=key, callback_data = questions_callback.new(item_name=value)))
+    russian_questions.insert(InlineKeyboardButton(text=key, callback_data = russian_questions_callback.new(item_name=value)))
 
-return_questions = InlineKeyboardMarkup(
+return_questions_rus = InlineKeyboardMarkup(
     inline_keyboard=[
         [
-            InlineKeyboardButton(text='Назад', callback_data='return')
+            InlineKeyboardButton(text='Назад', callback_data='return_rus')
         ]
     ]
 )
 
-return_questions_state = InlineKeyboardMarkup(
+return_questions_state_rus = InlineKeyboardMarkup(
     inline_keyboard=[
         [
-            InlineKeyboardButton(text='Назад', callback_data='return_state')
+            InlineKeyboardButton(text='Назад', callback_data='return_state_rus')
         ]
     ]
 )

@@ -5,23 +5,24 @@ from itertools import count
 from xml.dom.domreg import registered
 from aiogram import types
 from aiogram.types import CallbackQuery
-from keyboards.default.take_contact import keyboard
+from keyboards.default.take_contact import keyboard_rus
 from aiogram.types import ReplyKeyboardRemove
 from states.taking_problem import ProblemData
-from keyboards.inline.callback_data import questions_callback
-from keyboards.inline.get_contact import getting_contact
-from keyboards.inline.questions import return_questions, return_questions_state
+from keyboards.inline.callback_data import russian_questions_callback, uzbek_questions_callback
+from keyboards.inline.get_contact import getting_contact_russian
+from keyboards.inline.russian_questions import return_questions_rus, return_questions_state_rus
 from aiogram.types import ContentType
-from keyboards.default.main_keyboard import menu
+from keyboards.default.russian_keyboard import russian_menu
 from data.config import GROUP_CHAT_ID
+from keyboards.inline.auto_answer import answers
 
 
 from loader import dp, bot
 
-@dp.callback_query_handler(questions_callback.filter(item_name='another'))
+@dp.callback_query_handler(russian_questions_callback.filter(item_name='another'))
 async def answer_question(call: CallbackQuery, callback_data:dict):
     await call.message.answer("""Опишите вашу тему обращения, в скором времени с вами свяжется оператор.
-Благодарим вас за внимание """, reply_markup=return_questions_state)
+Благодарим вас за внимание """, reply_markup=return_questions_state_rus)
     await call.message.delete()
     await ProblemData.problem.set()
 
@@ -31,15 +32,13 @@ async def take_problem(message:types.Message, state: FSMContext):
     await state.update_data(
         {"problem" : problem}
     )
-    # await state.reset_state(with_data=False)
-    await message.answer("Поделитесь контактом пожалуйста", reply_markup=keyboard)
+    await message.answer("Поделитесь контактом пожалуйста", reply_markup=keyboard_rus)
     await ProblemData.number.set()
 
 @dp.message_handler(state=ProblemData.number, content_types=ContentType.CONTACT)
 async def take_phone(message: types.Contact, state : FSMContext):
     phone = message.contact.phone_number
     username = message.from_user.username
-
     await state.update_data(
         {'phone' : phone, 'user' : username}
     )
@@ -48,18 +47,21 @@ async def take_phone(message: types.Contact, state : FSMContext):
     problem = data.get('problem')
     num = data.get('phone')
     user = data.get('user')
+    await message.answer("Спасибо, в скором времени с вами свяжется оператор.\nБлагодарим вас за внимание", reply_markup = russian_menu)
     await bot.send_message(chat_id=GROUP_CHAT_ID, text=f"Проблема: {problem}\nномер : {num}\nюзер : @{user}")
-
     await state.reset_state()
-    await message.answer("Спасибо, в скором времени с вами свяжется оператор.\nБлагодарим вас за внимание", reply_markup = menu)
+    # await ProblemData.answer.set()
 
-@dp.callback_query_handler(text="mycontact")
+# @dp.callback_query_handler(text_contains = "done", state=ProblemData.answer)
+# async def auto_answer(call: CallbackQuery, state = FSMContext):
+#     print('11111111111111111111111')
+#     data =  await state.get_data()
+#     num = data.get("phone")
+#     print(num)
+#     # await state.reset_state()
+#     await call.message.delete()
+
+@dp.callback_query_handler(text="mycontact_rus")
 async def show_contact_keys(call: CallbackQuery):
-    await call.message.answer(text='Поделитесь контаком', reply_markup=keyboard)
+    await call.message.answer(text='Поделитесь контаком', reply_markup=keyboard_rus)
     await call.message.delete()
-
-@dp.message_handler(content_types='contact')
-async def get_contact(message: types.Message):
-    contact = message.contact
-    await message.answer(f"Спасибо {contact.full_name} \
- скоро с вами свяжется оператор", reply_markup=ReplyKeyboardRemove())

@@ -1,13 +1,13 @@
 from cgitb import text
 from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
 
-menu  = ReplyKeyboardMarkup(
+uzbek_menu  = ReplyKeyboardMarkup(
     keyboard=[
         [
-            KeyboardButton(text="O'zbeckcha"),
+            KeyboardButton(text='Savollar'),
         ],
         [
-            KeyboardButton(text="Русский"),
+            KeyboardButton(text="Qatnovlar Jadvali"),
         ]
     ], 
 resize_keyboard=True
