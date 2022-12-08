@@ -95,7 +95,7 @@ async def answer_question(call: CallbackQuery, callback_data:dict):
 
 @dp.callback_query_handler(ticket_return_callback_uzb.filter(item_name='site_uzb'))
 async def answer_question(call: CallbackQuery, callback_data:dict):
-    await call.message.asnwer("Biletni web-sahifada qaytarib berish")
+    await call.message.answer("Biletni web-sahifada qaytarib berish")
     for image in RETURN_TICKET_UZB:
         await call.message.reply_photo(photo=image)
     await call.message.delete()
