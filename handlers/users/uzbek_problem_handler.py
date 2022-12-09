@@ -14,6 +14,7 @@ from keyboards.default.uzbek_keyboard import uzbek_menu
 from data.config import GROUP_CHAT_ID
 from states.time_tabel_giver import TTable
 from keyboards.inline.stations import *
+from keyboards.inline.auto_answer import answers
 
 
 from loader import dp, bot
@@ -54,7 +55,7 @@ async def take_phone(message: types.Contact, state : FSMContext):
     problem = data.get('problem')
     num = data.get('phone')
     user = data.get('user')
-    await bot.send_message(chat_id=GROUP_CHAT_ID, text=f"Muammo: {problem}\nraqam : {num}\nuser : @{user}")
+    await bot.send_message(chat_id=GROUP_CHAT_ID, text=f"Muammo: {problem}\nraqam : {num}\nuser : @{user}", reply_markup=answers)
 
     await state.reset_state()
     await message.answer("Murojaat mavzusini tasvirlab bering, operator tez orada siz bilan bog'lanadi.\nE'tiboringiz uchun tashakkur", reply_markup = uzbek_menu)
