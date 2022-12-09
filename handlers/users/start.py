@@ -10,6 +10,7 @@ from keyboards.inline.russian_questions import russian_questions
 from keyboards.inline.uzbek_questions import uzbek_questions
 from keyboards.inline.stations import *
 from states.time_tabel_giver import TTable
+from states.taking_problem import ProblemData, ProblemDataUzbek
 from aiogram.dispatcher import FSMContext
 
 from loader import dp, bot
@@ -35,6 +36,12 @@ async def send_questions(message : types.Message, state = FSMContext):
     await bot.send_message(chat_id=message.chat.id, text="Выберите тему обращения", reply_markup=russian_questions)
     await message.delete()
 
+@dp.message_handler(text = 'Вопросы', state=ProblemData.problem)
+async def send_questions(message : types.Message, state = FSMContext):
+    await state.reset_state()
+    await bot.send_message(chat_id=message.chat.id, text="Выберите тему обращения", reply_markup=russian_questions)
+    await message.delete()
+
 @dp.message_handler(text = 'Вопросы')
 async def send_questions(message : types.Message):
     await bot.send_message(chat_id=message.chat.id, text="Выберите тему обращения", reply_markup=russian_questions)
@@ -46,6 +53,12 @@ async def send_questions(message : types.Message):
     await message.delete()
 
 @dp.message_handler(text = 'Savollar', state = TTable.city_uzb)
+async def send_questions(message : types.Message, state = FSMContext):
+    await state.reset_state()
+    await bot.send_message(chat_id=message.chat.id, text="Murojaatingiz mavzusini tanlang", reply_markup=uzbek_questions)
+    await message.delete()
+
+@dp.message_handler(text = 'Savollar', state = ProblemDataUzbek.problem_uzb)
 async def send_questions(message : types.Message, state = FSMContext):
     await state.reset_state()
     await bot.send_message(chat_id=message.chat.id, text="Murojaatingiz mavzusini tanlang", reply_markup=uzbek_questions)

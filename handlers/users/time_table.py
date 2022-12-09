@@ -24,6 +24,7 @@ async def send_questions(message : types.Message):
     await message.delete()
     await TTable.city.set()
 
+
 @dp.callback_query_handler(state=TTable.city)
 async def send_direction(call: CallbackQuery, state = FSMContext):
     city = int(call.data)

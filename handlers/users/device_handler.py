@@ -13,11 +13,11 @@ from keyboards.inline.callback_data import *
 
 from loader import dp, bot
 
-# @dp.message_handler(content_types=ContentType.PHOTO)
-# async def download(message: types.Message):
-#     # print(message.file_id)
-#     print(message.photo[0].file_id)
-#     await bot.send_message(chat_id=message.from_user.id, text=message.photo[0].file_id)
+@dp.message_handler(content_types=ContentType.PHOTO)
+async def download(message: types.Message):
+    # print(message.file_id)
+    print(message.photo[0].file_id)
+    await bot.send_message(chat_id=message.from_user.id, text=message.photo[0].file_id)
 
 @dp.callback_query_handler(pdf_callback.filter(item_name='site'))
 async def answer_question(call: CallbackQuery, callback_data:dict):

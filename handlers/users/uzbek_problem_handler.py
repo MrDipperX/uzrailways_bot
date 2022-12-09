@@ -12,6 +12,8 @@ from keyboards.inline.callback_data import uzbek_questions_callback
 from aiogram.types import ContentType
 from keyboards.default.uzbek_keyboard import uzbek_menu
 from data.config import GROUP_CHAT_ID
+from states.time_tabel_giver import TTable
+from keyboards.inline.stations import *
 
 
 from loader import dp, bot
@@ -22,6 +24,13 @@ async def answer_question(call: CallbackQuery, callback_data:dict):
 E'tiboringiz uchun tashakkur """, reply_markup=return_questions_state_uzb)
     await call.message.delete()
     await ProblemDataUzbek.problem_uzb.set()
+
+@dp.message_handler(text = 'Qatnovlar Jadvali', state = ProblemDataUzbek.problem_uzb)
+async def send_questions(message : types.Message, state = FSMContext):
+    await state.reset_state()
+    await bot.send_message(chat_id=message.chat.id, text="Shaharni tanlang", reply_markup=stations_uzb)
+    await message.delete()
+    await TTable.city_uzb.set()
 
 @dp.message_handler(state=ProblemDataUzbek.problem_uzb)
 async def take_problem(message:types.Message, state: FSMContext):
