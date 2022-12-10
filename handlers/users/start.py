@@ -17,8 +17,8 @@ from loader import dp, bot
 
 @dp.message_handler(CommandStart())
 async def bot_start(message: types.Message):
-        await bot.send_message(chat_id = message.chat.id, text = "Assalomu Alaykum. Tilni tanlang \nЗдравствуйте. Выберите язык", reply_markup=menu)
-        await message.delete()
+    await bot.send_message(chat_id = message.chat.id, text = "Assalomu Alaykum. Tilni tanlang \nЗдравствуйте. Выберите язык", reply_markup=menu)
+    await message.delete()
 
 @dp.message_handler(text = 'Русский')
 async def send_questions(message : types.Message):
