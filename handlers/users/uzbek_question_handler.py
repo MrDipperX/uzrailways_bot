@@ -27,6 +27,16 @@ async def answer_question(call: CallbackQuery, callback_data:dict):
     await call.message.answer("O'z qurilmangizni tanlang", reply_markup=faktura_uzb)
     await call.message.delete()
 
+@dp.callback_query_handler(uzbek_questions_callback.filter(item_name='new_vagon'))
+async def answer_question(call: CallbackQuery, callback_data:dict):
+    await call.message.answer("Har kuni qo'shimcha vagonlar qo`shiladi. Batafsil ma'lumotni  veb-saytga kirib  yoki  ma`lumotxonaning  1005 qisqa raqamiga qo`ng`iroq qilib bilishingiz  mumkin.", reply_markup=return_questions_uzb)
+    await call.message.delete()
+
+@dp.callback_query_handler(uzbek_questions_callback.filter(item_name='passport_no'))
+async def answer_question(call: CallbackQuery, callback_data:dict):
+    await call.message.answer("""Poyezdga chiqish uchun yo`lovchi pdf ko`rinishidagi elektron chiptasini hamda chiptada ko`rsatilgan shaxsni tasdiqlovchi hujjat (pasport, IDkarta yoki yangi haydovchilik guvohnomasi) taqdim qilishi shart.""", reply_markup=return_questions_uzb)
+    await call.message.delete()
+
 @dp.callback_query_handler(uzbek_questions_callback.filter(item_name='change'))
 async def answer_question(call: CallbackQuery, callback_data:dict):
     await call.message.answer("""To'liq ma'lumotni olish uchun 1005 raqamiga qo'ng'iroq qiling""", reply_markup=return_questions_uzb)

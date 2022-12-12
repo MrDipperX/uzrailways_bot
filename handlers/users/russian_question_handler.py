@@ -26,6 +26,16 @@ async def answer_question(call: CallbackQuery, callback_data:dict):
     await call.message.answer("Выберите ваше устройтсво", reply_markup=faktura)
     await call.message.delete()
 
+@dp.callback_query_handler(russian_questions_callback.filter(item_name='new_train'))
+async def answer_question(call: CallbackQuery, callback_data:dict):
+    await call.message.answer("Каждый день цепляются дополнительные вагоны, для более подробной информации зайдите на сайт либо позвоните в справочную по короткому номеру 1005", reply_markup=return_questions_rus)
+    await call.message.delete()
+
+@dp.callback_query_handler(russian_questions_callback.filter(item_name='no_passport'))
+async def answer_question(call: CallbackQuery, callback_data:dict):
+    await call.message.answer("При посадке пассажир должен предъявить электронный билет в виде pdf файла и оригинал документа удостоверяющего личность (паспорт, ID-карта или водительские права нового образца)", reply_markup=return_questions_rus)
+    await call.message.delete()
+
 @dp.callback_query_handler(russian_questions_callback.filter(item_name='change'))
 async def answer_question(call: CallbackQuery, callback_data:dict):
     await call.message.answer("""Для получения информации, позвоните в справочную по номеру 1005""", reply_markup=return_questions_rus)

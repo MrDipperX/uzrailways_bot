@@ -11,6 +11,8 @@ questions_dict = {'Получение pdf билета':'pdf',
         'Скидки на билеты':'discount',
         'Поменять билет':'change',
         'Регистрация на платформе':'registration',
+        'Посадка без паспорта' : 'no_passport',
+        'Новые вогоны и направления' : 'new_train',
         'Другая тема' : 'another'}
 
 russian_questions = InlineKeyboardMarkup(row_width=1)
