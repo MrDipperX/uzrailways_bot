@@ -11,7 +11,7 @@ questions_dict = {'pdf chipta olish':'pdf',
         'Chiptani almashtirish':'change',
         'Chipta chegirmalari':'discount',
         "Platformada ro'yxatdan o'tish":'registration',
-        "Chiptasiz chiqish" : "passport_no",
+        "Passportsiz chiqish" : "passport_no",
         "Yangi vagonlar va yo'nalishlar" : 'new_vagon',
         'Boshqa mavzu' : 'another'}
 
