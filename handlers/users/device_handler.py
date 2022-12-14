@@ -26,6 +26,20 @@ async def answer_question(call: CallbackQuery, callback_data:dict):
         await call.message.reply_photo(photo=image)
     await call.message.delete()
 
+@dp.callback_query_handler(buying_ticket_callback.filter(item_name='site'))
+async def answer_question(call: CallbackQuery, callback_data:dict):
+    await call.message.answer("Покупка билета онлайн на веб-сайте")
+    for image in BUYING_TICKET_RUS:
+        await call.message.reply_photo(photo=image)
+    await call.message.delete()
+
+@dp.callback_query_handler(buying_ticket_callback.filter(item_name='programm'))
+async def answer_question(call: CallbackQuery, callback_data:dict):
+    await call.message.answer("Покупка билета онлайн в приложении")
+    for image in BUYING_TICKET_RUS_APP:
+        await call.message.reply_photo(photo=image)
+    await call.message.delete()
+
 @dp.callback_query_handler(pdf_callback.filter(item_name='programm'))
 async def answer_question(call: CallbackQuery, callback_data:dict):
     await call.message.answer("В процессе скоро все дополним ...")
@@ -91,6 +105,20 @@ async def answer_question(call: CallbackQuery, callback_data:dict):
 @dp.callback_query_handler(pdf_callback_uzb.filter(item_name='programm_uzb'))
 async def answer_question(call: CallbackQuery, callback_data:dict):
     await call.message.answer("Jarayonda tez orada qo'shiladi ...")
+    await call.message.delete()
+
+@dp.callback_query_handler(buying_ticket_callback_uzb.filter(item_name='site_uzb'))
+async def answer_question(call: CallbackQuery, callback_data:dict):
+    await call.message.answer("Biletni online web-sahifadan harid qilish")
+    for image in BUYING_TICKET_UZB:
+        await call.message.reply_photo(photo=image)
+    await call.message.delete()
+
+@dp.callback_query_handler(buying_ticket_callback_uzb.filter(item_name='programm_uzb'))
+async def answer_question(call: CallbackQuery, callback_data:dict):
+    await call.message.answer("Biletni online mobil ilovadan harid qilish")
+    for image in BUYING_TICKET_UZB_APP:
+      await call.message.reply_photo(photo=image)
     await call.message.delete()
 
 @dp.callback_query_handler(ticket_return_callback_uzb.filter(item_name='site_uzb'))

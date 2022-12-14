@@ -15,6 +15,11 @@ for key, value in app_divider.items():
     pdf_divisor.insert(InlineKeyboardButton(text=key, callback_data = pdf_callback.new(item_name=value)))
 pdf_divisor.insert(return_questions_rus)
 
+buying_ticket = InlineKeyboardMarkup(row_width=1)
+for key, value in app_divider.items():
+    buying_ticket.insert(InlineKeyboardButton(text=key, callback_data = buying_ticket_callback.new(item_name=value)))
+buying_ticket.insert(return_questions_rus)
+
 ticket_return = InlineKeyboardMarkup(row_width=1)
 for key, value in app_divider.items():
     ticket_return.insert(InlineKeyboardButton(text=key, callback_data = ticket_return_callback.new(item_name=value)))
@@ -49,6 +54,11 @@ pdf_divisor_uzb = InlineKeyboardMarkup(row_width=1)
 for key, value in app_divider_uzb.items():
     pdf_divisor_uzb.insert(InlineKeyboardButton(text=key, callback_data = pdf_callback_uzb.new(item_name=value)))
 pdf_divisor_uzb.insert(return_questions_uzb)
+
+buying_ticket_uzb = InlineKeyboardMarkup(row_width=1)
+for key, value in app_divider_uzb.items():
+    buying_ticket_uzb.insert(InlineKeyboardButton(text=key, callback_data = buying_ticket_callback_uzb.new(item_name=value)))
+buying_ticket_uzb.insert(return_questions_uzb)
 
 ticket_return_uzb = InlineKeyboardMarkup(row_width=1)
 for key, value in app_divider_uzb.items():

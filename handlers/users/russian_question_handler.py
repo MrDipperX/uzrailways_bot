@@ -16,6 +16,11 @@ async def answer_question(call: CallbackQuery, callback_data:dict):
     await call.message.answer("Выберите ваше устройтсво", reply_markup=pdf_divisor)
     await call.message.delete()
 
+@dp.callback_query_handler(russian_questions_callback.filter(item_name='buy_ticket'))
+async def answer_question(call: CallbackQuery, callback_data:dict):
+    await call.message.answer("Выберите ваше устройтсво", reply_markup=buying_ticket)
+    await call.message.delete()
+
 @dp.callback_query_handler(russian_questions_callback.filter(item_name='cancel'))
 async def answer_question(call: CallbackQuery, callback_data:dict):
     await call.message.answer("Выберите ваше устройтсво", reply_markup=ticket_return)

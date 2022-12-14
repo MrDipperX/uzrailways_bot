@@ -5,7 +5,8 @@ from unicodedata import category
 from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from keyboards.inline.callback_data import uzbek_questions_callback
 
-questions_dict = {'pdf chipta olish':'pdf',
+questions_dict = {'Chipta sotib olish' : 'buy_ticket',
+        'pdf chipta olish':'pdf',
         'Chiptani qaytarish': 'cancel',
         'Chipta fakturasi':'schet',
         'Chiptani almashtirish':'change',

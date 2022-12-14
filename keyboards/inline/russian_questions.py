@@ -5,7 +5,8 @@ from unicodedata import category
 from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from keyboards.inline.callback_data import *
 
-questions_dict = {'Получение pdf билета':'pdf',
+questions_dict = {"Как купить билет" : "buy_ticket",
+        'Получение pdf билета':'pdf',
         'Возврат билета': 'cancel',
         'Счет фактура билета':'schet',
         'Скидки на билеты':'discount',

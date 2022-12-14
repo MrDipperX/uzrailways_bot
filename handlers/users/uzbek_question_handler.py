@@ -17,6 +17,11 @@ async def answer_question(call: CallbackQuery, callback_data:dict):
     await call.message.answer("O'z qurilmangizni tanlang", reply_markup=pdf_divisor_uzb)
     await call.message.delete()
 
+@dp.callback_query_handler(uzbek_questions_callback.filter(item_name='buy_ticket'))
+async def answer_question(call: CallbackQuery, callback_data:dict):
+    await call.message.answer("O'z qurilmangizni tanlang", reply_markup=buying_ticket_uzb)
+    await call.message.delete()
+
 @dp.callback_query_handler(uzbek_questions_callback.filter(item_name='cancel'))
 async def answer_question(call: CallbackQuery, callback_data:dict):
     await call.message.answer("O'z qurilmangizni tanlang", reply_markup=ticket_return_uzb)
