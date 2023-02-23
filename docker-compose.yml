@@ -7,3 +7,6 @@ services:
     volumes:
       - .:/railway_bot
     privileged: true
+    depends_on:
+      - db
+  db: postgres:latest

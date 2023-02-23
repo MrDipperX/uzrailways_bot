@@ -1,0 +1,132 @@
+{
+  "data":
+  [
+    {"question": "question1_uz_lt",
+      "answer": "Hurmatli, mijoz. Yo'lga chiqmoqchi bo'lgan stansiyangizni tanlang"},
+
+    {"question": "question2_uz_lt",
+      "answer": "Hurmatli, mijoz. \n\nPulingiz 3-15 ish kunida tushadi\n\nAgar poyezd boshlang'ich stantsiyadan yo'lga chiqqan bo'lsa,yoki elektron chipta kassada qog'oz varianti chiqartirilgan bo'lsa,chiptani faqat jd kassalarida qaytarsa bo'ladi"},
+
+    {"question": "question3_uz_lt",
+      "answer": "Hurmatli, mijoz. Pasport seriya va raqamini yuboring. Aniqlashtirib, xabar beramiz."},
+
+    {"question": "question4_uz_lt",
+      "answer": "Hurmatli, mijoz. Pasport seriya va raqamini yuboring. Aniqlashtirib, xabar beramiz."},
+
+    {"question": "question5_uz_lt",
+      "answer": "Hurmatli, mijoz. Pasport seriya va raqamini yuboring. Aniqlashtirib, xabar beramiz."},
+
+    {"question": "question6_uz_lt",
+      "answer": "Hurmatli, mijoz. Pasport seriya va raqamini yuboring. Aniqlashtirib, xabar beramiz."},
+
+    {"question": "question7_uz_lt",
+      "answer": "Hurmatli, mijoz. Process"},
+
+    {"question": "question8_uz_lt",
+      "answer": "Hurmatli, mijoz. Mahalliy yo'nalishda pasport seriya, raqamingiz to'g'ri bolsa yetarli."},
+
+    {"question": "question9_uz_lt",
+      "answer": "Hurmatli, mijoz. Biletingizni pdf variantini telefoningizda ko'rsatishingiz kifoya."},
+
+    {"question": "question10_uz_lt",
+      "answer": "Hurmatli, mijoz. Pasportning asl nusxasi kerak!"},
+
+    {"question": "question11_uz_lt",
+      "answer": "Hurmatli, mijoz. Chiptani o'zgartirish xususiyati yo'q. Chiptani qaytarib, yana bir bor sotib olishingiz kerak."},
+
+    {"question": "question12_uz_lt",
+      "answer": "Hurmatli, mijoz. Odatda stansiyada yoki poezdda unutilgan narsalarni qaytarish mumkin, asosiysi voqea haqida imkon qadar tezroq xabar berishdir. Agar siz yo'qotishni aniqlasangiz, birinchi navbatda ishonch telefoniga qo'ng'iroq qiling:\n\n☎️ (71) 299-94-50"},
+
+    {"question": "question13_uz_lt",
+      "answer": "Hurmatli, mijoz. Yo'lga chiqmoqchi bo'lgan stansiyangizni tanlang"},
+
+    {"question": "question14_uz_lt",
+      "answer": "To admins"},
+
+    {"question": "question1_ru",
+      "answer": "Уважаемый, клиент. Выберите станцию, с которой вы хотите отправиться"},
+
+    {"question": "question2_ru",
+      "answer": "Уважаемый, клиент. Ваши деньги поступят в течение 3-15 рабочих дней\n\nЕсли поезд отошел от начальной станции или электронный билет был распечатан в кассе, возврат билета возможен только в кассе."},
+
+    {"question": "question3_ru",
+      "answer": "Уважаемый, клиент. Отправьте серию и номер паспорта. Мы разузнаем и сообщим."},
+
+    {"question": "question4_ru",
+      "answer": "Уважаемый, клиент. Отправьте серию и номер паспорта. Мы разузнаем и сообщим."},
+
+    {"question": "question5_ru",
+      "answer": "Уважаемый, клиент. Отправьте серию и номер паспорта. Мы разузнаем и сообщим."},
+
+    {"question": "question6_ru",
+      "answer": "Уважаемый, клиент. Отправьте серию и номер паспорта. Мы разузнаем и сообщим."},
+
+    {"question": "question7_ru",
+      "answer": "Уважаемый, клиент. Process"},
+
+    {"question": "question8_ru",
+      "answer": "Уважаемый, клиент. На внутреннем маршруте достаточно, чтобы серийный номер вашего паспорта был правильным."},
+
+    {"question": "question9_ru",
+      "answer": "Уважаемый, клиент. Просто покажите pdf-версию билета на телефоне."},
+
+    {"question": "question10_ru",
+      "answer": "Уважаемый, клиент. Оригинал паспорта обязателен!"},
+
+    {"question": "question11_ru",
+      "answer": "Уважаемый, клиент. Функция переоформления билета отсутствует. Вам нужно вернуть билет и купить снова."},
+
+    {"question": "question12_ru",
+      "answer": "Уважаемый, клиент. Вернуть забытые на вокзале или в поезде вещи обычно удается, главное как можно скорее сообщить о происшествии. Если вы обнаружили пропажу, первое, что вы должны сделать, это позвонить на горячую линию:\n\n☎️ (71) 299-94-50"},
+
+    {"question": "question13_ru",
+      "answer": "Уважаемый, клиент. Выберите станцию, с которой вы хотите отправиться"},
+
+    {"question": "question14_ru",
+      "answer": "To admins"},
+
+    {"question": "question1_uz_cy",
+      "answer": "Ҳурматли, мижоз. Йўлга чиқмоқчи бўлган стансиянгизни танланг"},
+
+    {"question": "question2_uz_cy",
+      "answer": "Ҳурматли, мижоз. \n\nПулингиз 3-15 иш кунида тушади\n\nAгар пойезд бошланғич станциядан йўлга чиққан бўлса,ёки електрон чипта кассада распечатка килинган бўлса,чиптани фақат жд кассаларида қайтарса бўлади"},
+
+    {"question": "question3_uz_cy",
+      "answer": "Ҳурматли, мижоз. Паспорт серия ва рақамини юборинг. Aниқлаштириб, хабар берамиз."},
+
+    {"question": "question4_uz_cy",
+      "answer": "Ҳурматли, мижоз. Паспорт серия ва рақамини юборинг. Aниқлаштириб, хабар берамиз."},
+
+    {"question": "question5_uz_cy",
+      "answer": "Ҳурматли, мижоз. Паспорт серия ва рақамини юборинг. Aниқлаштириб, хабар берамиз."},
+
+    {"question": "question6_uz_cy",
+      "answer": "Ҳурматли, мижоз. Паспорт серия ва рақамини юборинг. Aниқлаштириб, хабар берамиз."},
+
+    {"question": "question7_uz_cy",
+      "answer": "Ҳурматли, мижоз. Process"},
+
+    {"question": "question8_uz_cy",
+      "answer": "Ҳурматли, мижоз. Маҳаллий йўналишда паспорт серия, рақамингиз тўғри болса етарли."},
+
+    {"question": "question9_uz_cy",
+      "answer": "Ҳурматли, мижоз. Билетингизни пдф вариантини телефонингизда кўрсатишингиз кифоя."},
+
+    {"question": "question10_uz_cy",
+      "answer": "Ҳурматли, мижоз. Паспортнинг асл нусхаси керак!"},
+
+    {"question": "question11_uz_cy",
+      "answer": "Ҳурматли, мижоз. Чиптани ўзгартириш хусусияти йўқ. Чиптани қайтариб, яна бир бор сотиб олишингиз керак."},
+
+    {"question": "question12_uz_cy",
+      "answer": "Ҳурматли, мижоз. Одатда стансияда ёки поездда унутилган нарсаларни қайтариш мумкин, асосийси воқеа ҳақида имкон қадар тезроқ хабар беришдир. Aгар сиз йўқотишни аниқласангиз, биринчи навбатда ишонч телефонига қўнғироқ қилинг:\n\n☎️ (71) 299-94-50"},
+
+    {"question": "question13_uz_cy",
+      "answer": "Ҳурматли, мижоз. Йўлга чиқмоқчи бўлган стансиянгизни танланг"},
+
+    {"question": "question14_uz_cy",
+      "answer": "To admins"}
+
+  ]
+
+}

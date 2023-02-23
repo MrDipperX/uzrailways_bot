@@ -4,50 +4,49 @@ from gc import callbacks
 from unicodedata import category
 from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
-stations_rus = InlineKeyboardMarkup(
-inline_keyboard=[
-    [ 
-        InlineKeyboardButton(text='Ташкент', callback_data='2900001'),
-        InlineKeyboardButton(text='Самарканд', callback_data='2900700'),
-        InlineKeyboardButton(text='Бухара', callback_data='2900800'),
-    ],
-    [
-        InlineKeyboardButton(text='Хива', callback_data='2900172'),
-        InlineKeyboardButton(text='Ургенч', callback_data='2900790'),
-        InlineKeyboardButton(text='Нукус', callback_data='2900970'),
-    ],
-    [
-        InlineKeyboardButton(text='Навои', callback_data='2900930'),
-        InlineKeyboardButton(text='Карши', callback_data='2900750'),
-        InlineKeyboardButton(text='Джизак', callback_data='2900720'),
-    ],
-    [
-        InlineKeyboardButton(text='Термез', callback_data='2900255'),
-        InlineKeyboardButton(text='Гулистан', callback_data='2900850'),
-    ]
-])
+from utils.lang import phrases
 
-stations_uzb = InlineKeyboardMarkup(
-inline_keyboard=[
-    [ 
-        InlineKeyboardButton(text='Toshkent', callback_data='2900001'),
-        InlineKeyboardButton(text='Samarqand', callback_data='2900700'),
-        InlineKeyboardButton(text='Buxoro', callback_data='2900800'),
-    ],
-    [
-        InlineKeyboardButton(text='Xiva', callback_data='2900172'),
-        InlineKeyboardButton(text='Urganch', callback_data='2900790'),
-        InlineKeyboardButton(text='Nukus', callback_data='2900970'),
-    ],
-    [
-        InlineKeyboardButton(text='Navoiy', callback_data='2900930'),
-        InlineKeyboardButton(text='Qarshi', callback_data='2900750'),
-        InlineKeyboardButton(text='Jizzax', callback_data='2900720'),
-    ],
-    [
-        InlineKeyboardButton(text='Termiz', callback_data='2900255'),
-        InlineKeyboardButton(text='Guliston', callback_data='2900850'),
-    ]
-])
+all_stations = {
+    '2900002': 'Toshkent',
+    '2900700': 'Samarqand',
+    '2900800': 'Buxoro',
+    '2900172': 'Xiva',
+    '2900790': 'Urganch',
+    '2900970': 'Nukus',
+    '2900680': 'Andijon',
+    '2900750': 'Qarshi',
+    '2900720': 'Jizzax',
+    '2900255': 'Termiz',
+    '2900850': 'Guliston',
+    '2900880': "Qo'qon",
+    '2900920': "Marg'ilon",
+    '2900693': "Pop",
+    '2900940': "Namangan"
+}
+
+
+async def give_stations(source):
+    number = 0
+    inline_stations = InlineKeyboardMarkup(row_width=6)
+    inline_stations.row()
+    for value,key in all_stations.items():
+        if value == source:
+            continue
+        if number % 3 == 0:
+            inline_stations.row()
+        inline_stations.insert(InlineKeyboardButton(
+        key, callback_data=value
+        ))
+        number += 1
+    inline_stations.row()
+    if source is None:
+        inline_stations.insert(InlineKeyboardButton(
+            text='Ortga', callback_data='orqaga_st'
+            ))
+    else:
+        inline_stations.insert(InlineKeyboardButton(
+            text='Ortga', callback_data='orqaga_source'
+            ))
+    return inline_stations
 
 
